@@ -9,22 +9,22 @@ export type QA = { q: string; a: string }
 export const FAQS: QA[] = [
   {
     q: 'What do you do?',
-    a: 'PLACEHOLDER - tell me what to put here: the kinds of work you take on, and who it is usually for.',
+    a: 'I\u2019m a virtual assistant. I offer email and calendar management, light social media upkeep, simple Canva edits and data entry to busy clients.',
   },
   {
     q: 'How fast can you start?',
-    a: 'PLACEHOLDER - tell me what to put here: your usual lead time for small fixes vs. larger projects, and your working hours.',
+    a: 'Tell me what you need and when, and I\u2019ll confirm my availability. Small, well-defined tasks are the easiest to start right away.',
   },
   {
     q: 'How much do you charge?',
-    a: 'PLACEHOLDER - tell me what to put here: how you price (hourly, per project, retainer) and how a quote is put together.',
+    a: 'It depends on the tasks and how many hours they take. Message me what you need help with and I\u2019ll send you a clear quote.',
   },
   {
     q: 'Where are you based?',
-    a: 'PLACEHOLDER - tell me what to put here: your location or timezone, and which client timezones you overlap with.',
+    a: 'I\u2019m in Zambales, Philippines (UTC+8). I\u2019m happy to adjust my schedule so we overlap during your working hours.',
   },
   {
     q: 'What happens after I write?',
-    a: 'PLACEHOLDER - tell me what to put here: how fast you reply and what the next step looks like.',
+    a: 'I\u2019ll reply by email or WhatsApp to go over what you need. Then we agree on the tasks, the schedule and the price before I start.',
   },
 ]

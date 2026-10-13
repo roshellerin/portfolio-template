@@ -1,0 +1,179 @@
+/* ============================================
+   PROJECTS - sample cards and the full-size dialog
+   Re-uses the page header (.pgrid) and glass sheet (.home__glass).
+   ============================================ */
+.samples__glass { position: relative; min-height: 0; overflow-y: auto; }
+.samples__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: clamp(14px, 1.6vw, 24px);
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  align-content: start;
+}
+
+.sample {
+  appearance: none;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  text-align: left;
+  color: var(--navy);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 18px;
+  background: var(--white);
+  box-shadow: inset 0 0 0 1px var(--line), 0 18px 40px -28px rgba(42, 32, 64, 0.45);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.sample:hover { transform: translateY(-3px); box-shadow: inset 0 0 0 1px var(--line-strong), 0 24px 48px -26px rgba(42, 32, 64, 0.55); }
+.sample:focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; }
+
+.sample__media { position: relative; display: block; border-bottom: 1px solid var(--line); }
+.sample__img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: top center;
+}
+/* A soft fade on cropped images (posters, long emails) hints there is more. */
+.sample__media--cropped::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 40%;
+  pointer-events: none;
+  background: linear-gradient(to bottom, transparent, rgba(30, 21, 48, 0.4));
+}
+.sample__cue {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  z-index: 1;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  color: #fff;
+  background: rgba(30, 21, 48, 0.82);
+  padding: 7px 11px;
+  border-radius: 999px;
+}
+.sample__body { display: flex; flex-direction: column; gap: 8px; padding: 16px 18px 18px; flex: 1; }
+.sample__badge {
+  align-self: flex-start;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--orange-ink);
+  background: var(--tint);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+.sample__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: clamp(18px, 1.4vw, 24px);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--navy);
+}
+.sample__title svg { color: var(--orange-ink); flex: none; }
+.sample__tagline { font-size: 15px; line-height: 1.5; color: var(--muted); }
+.sample__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+.sample__stat { display: flex; flex-direction: column; font-size: 12px; color: var(--muted); }
+.sample__stat strong { font-size: 15px; font-weight: 700; color: var(--navy); }
+
+/* ---------- Full-size dialog ---------- */
+.sample-dialog {
+  border: 0;
+  padding: 0;
+  width: min(1100px, 94vw);
+  max-height: 92vh;
+  overflow: auto;
+  border-radius: 22px;
+  background: var(--cream);
+  color: var(--navy);
+  box-shadow: var(--shadow-card);
+}
+.sample-dialog::backdrop { background: rgba(30, 21, 48, 0.6); backdrop-filter: blur(4px); }
+.sample-dialog__inner { position: relative; }
+.sample-dialog__bar {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  height: 0;
+  display: flex;
+  justify-content: flex-end;
+  padding: 12px;
+}
+.sample-dialog__close {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  color: var(--navy);
+  background: var(--white);
+  box-shadow: inset 0 0 0 1px var(--line-strong);
+}
+.sample-dialog__close:focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; }
+.sample-dialog__img { display: block; width: 100%; height: auto; }
+/* Before and after: stacked, each with a caption. */
+.sample-dialog__gallery { display: grid; gap: 18px; padding: 56px clamp(14px, 3vw, 28px) 0; }
+.sample-dialog__gallery--grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 860px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+@media (max-width: 600px) { .sample-dialog__gallery--grid { grid-template-columns: 1fr; } }
+.sample-dialog__figure { margin: 0; }
+.sample-dialog__figure figcaption { margin: 0 0 8px; font-weight: 700; color: var(--navy); }
+.sample-dialog__figure img { background: #f6f2fd; display: block; width: 100%; height: auto; border-radius: 12px; box-shadow: inset 0 0 0 1px var(--line); border: 1px solid var(--line); }
+/* A very long image (a full email) is shown at a readable width and scrolls. */
+.sample-dialog__img--long { width: min(100%, 560px); margin: 0 auto; padding: 24px 0 0; }
+/* Tall images (posters, stories) stay uncropped and fit the window. */
+.sample-dialog__img--portrait {
+  width: auto;
+  max-width: 100%;
+  max-height: 72vh;
+  margin: 0 auto;
+  padding-top: 24px;
+}
+.sample-dialog__copy { display: flex; flex-direction: column; gap: 12px; padding: clamp(18px, 3vw, 32px); }
+.sample-dialog__title { margin: 0; font-size: clamp(22px, 2.4vw, 32px); font-weight: 700; line-height: 1.15; }
+.sample-dialog__copy p { margin: 0; line-height: 1.65; color: var(--muted); max-width: 70ch; }
+.sample-dialog__link {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  color: var(--orange-ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sample { transition: none; }
+  .sample:hover { transform: none; }
+}

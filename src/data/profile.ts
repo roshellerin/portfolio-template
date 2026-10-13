@@ -2,7 +2,7 @@
  * YOUR IDENTITY - start here.
  *
  * Everything that says who you are lives in this file: name, handle, photo,
- * socials, email and the Home headline. Every value below is a PLACEHOLDER.
+ * socials, email and the Home headline. Edit the values below to change the site.
  * Replace the text, or hand this file to your AI assistant and tell it what
  * to put in each field.
  *
@@ -46,31 +46,30 @@ export type Profile = {
 }
 
 export const profile: Profile = {
-  name: 'Your Name',
-  firstName: 'Your Name',
-  handle: '@yourhandle',
-  role: 'PLACEHOLDER - your title',
-  avatarSrc: '/avatar.svg',
-  verifiedLabel: 'PLACEHOLDER - what the tick means (e.g. a certification)',
-  email: 'you@example.com',
-  location: 'PLACEHOLDER - your city or timezone',
+  name: 'Roshelle B. Rin',
+  firstName: 'Roshelle',
+  handle: '@xroshrinx',
+  role: 'Virtual Assistant',
+  avatarSrc: '/avatar.jpg',
+  verifiedLabel: 'Open to new clients',
+  email: 'roshelle.rin2@gmail.com',
+  location: 'Zambales, Philippines',
   // Pick any icon from https://phosphoricons.com and import it above.
   stats: [
-    { value: '0 yrs', label: 'PLACEHOLDER', Icon: Briefcase },
-    { value: '#000', label: 'PLACEHOLDER', Icon: SealCheck },
-    { value: 'GMT+0', label: 'PLACEHOLDER', Icon: Clock },
+    { value: '5', label: 'Core services', Icon: Briefcase },
+    { value: 'Google', label: 'Workspace', Icon: SealCheck },
+    { value: 'UTC+8', label: 'Philippines time', Icon: Clock },
   ],
   // The intro types this line, then flies it into the Home headline.
   // Keep it short: two halves, 5-8 words total.
-  displayName: { line1: 'Your headline here.', line2: 'Keep it short.' },
+  displayName: { line1: 'A fresh pair of hands', line2: 'for your busy days.' },
   hero: {
-    body: 'PLACEHOLDER - one line on what you do and who you do it for.',
-    portraitSrc: '/avatar.svg',
-    portraitAlt: 'Portrait placeholder',
+    body: 'Virtual assistant ready to help with email, calendar, social media, Canva and data entry.',
+    portraitSrc: '/avatar.jpg',
+    portraitAlt: 'Portrait of Roshelle B. Rin',
   },
   socials: [
-    { label: 'Facebook profile', href: '#', iconPath: '/icons/facebook.svg' },
-    { label: 'LinkedIn profile', href: '#', iconPath: '/icons/linkedin.svg' },
-    { label: 'Discord profile', href: '#', iconPath: '/icons/discord.svg' },
+    { label: 'Instagram profile', href: 'https://www.instagram.com/xroshrinx/', iconPath: '/icons/instagram.svg' },
+    { label: 'WhatsApp chat', href: 'https://wa.me/639998344259', iconPath: '/icons/whatsapp.svg' },
   ],
 }

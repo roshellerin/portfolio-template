@@ -1,4 +1,4 @@
-import ProjectsGrid from '@/components/ProjectsGrid'
+import SamplesGrid from '@/components/SamplesGrid'
 
 /**
  * Projects is a fixed viewport like Home: six cards, one per body of work,
@@ -6,5 +6,5 @@ import ProjectsGrid from '@/components/ProjectsGrid'
  * scrolling stack here and the reveal hooks would have nothing to reveal.
  */
 export default function ProjectsView() {
-  return <ProjectsGrid />
+  return <SamplesGrid />
 }
